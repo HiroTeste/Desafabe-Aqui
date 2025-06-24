@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Desabafe Aqui</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #f1f1f1;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      position: relative;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    #formulario {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    input {
+      width: 300px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #00bfff;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #resposta {
+      margin-top: 30px;
+      font-size: 28px;
+      font-style: italic;
+      display: none;
+      text-align: center;
+      max-width: 80%;
+    }
+
+    #instagram {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    #instagram img {
+      width: 32px;
+      height: 32px;
+      filter: brightness(1.5);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Desabafe aqui</h1>
+
+  <div id="formulario">
+    <input type="text" id="desabafo" placeholder="Digite algo que te aflige...">
+    <button onclick="mostrarResposta()">Enviar</button>
+  </div>
+
+  <div id="resposta"></div>
+
+  <a id="instagram" href="https://www.instagram.com/theus_do/profilecard/?igsh=MWJtZzFpdGppeWtkbA==" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="Instagram">
+  </a>
+
+  <script>
+    const respostas = [
+      "É complicado.",
+      "Num Compensa meu Chefe",
+      "Força ai, guerreiro.",
+      "vish, mas não posso fazer nada.",
+      "Você já pensou em pular de um predio?",
+      "Isso aí é coisa do Inimigo, Ore mais.",
+      "Respira fundo... e bata a cabeça na parede.",
+      "Terapia? Quem vai precisar é o site depois desse teu problema.",
+      "Que cada cachorro lamba sua propria bunda, Boa sorte ai 👍.",
+      "to afim de ajudar não",
+      "Quem disse que é poblema meu?"
+    ];
+
+    function mostrarResposta() {
+      const resposta = document.getElementById('resposta');
+      const formulario = document.getElementById('formulario');
+      const indice = Math.floor(Math.random() * respostas.length);
+      resposta.textContent = respostas[indice];
+      resposta.style.display = 'block';
+      formulario.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
+<footer style="position: absolute; bottom: 10px; left: 20px; color: #999; font-size: 14px;">
+  Uma Criação duvidosa, Boa sorte 👍 : <strong>Thiery Silva</strong>
+</footer>
+
+<div id="resposta"></div>
+
+<button onclick="location.reload()" style="margin-top: 30px; ...">🔁 Recarregar</button>
